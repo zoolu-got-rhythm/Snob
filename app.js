@@ -22,10 +22,10 @@ var boxes = [];
     document.body.appendChild(ul);
 
 for (var i = 0; i < 8; i++) {
-    var ele = build("li", 60, 60);
-    ul.appendChild(ele)
-    boxes.push(ele)
-    // boxes[i].addEventListener("mouseover", function(){ expand(ele, i) });
+    var li = build("li", 60, 60);
+    ul.appendChild(li);
+    boxes.push(li);
+    // boxes[i].addEventListener("mouseover", function(){ expand(li, i) });
     boxes[i].onmouseover = expand.bind(this, (i));
     boxes[i].onmouseout = detract.bind(this, (i));
     boxes[i].onclick = gallery.bind(this, (i));
