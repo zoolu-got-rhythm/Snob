@@ -20,13 +20,15 @@ function build(element, width, height) {
     newElement.style.width = width + "px";
     newElement.style.height = height + "px";
     newElement.style.backgroundColor = '#ddd';
-    newElement.style.margin = '10px';
+    newElement.style.borderRadius = "4px";
+
+    newElement.style.margin = '5px';
     return newElement;
 }
 
 // create a hundred boxes
 var boxes = [];
-for (var i = 0; i < artists.length; i++) {
+for (var i = 0; i < 15; i++) {
     var ele = build("div", "60", "60");
 
     boxes.push(ele)
@@ -44,7 +46,7 @@ function expand(currentEle) {
     boxes[currentEle].style.width = "100px";
     boxes[currentEle].style.cursor = "pointer";
 
-    boxes[currentEle].innerHTML = "<h3>" + artists[currentEle] + "<h3>";
+    boxes[currentEle].innerHTML = currentEle;
 
     console.log(boxes[currentEle]);
 
@@ -52,7 +54,7 @@ function expand(currentEle) {
 
 
 function detract(currentEle) {
-    boxes[currentEle].style.width = "50px";
+    boxes[currentEle].style.width = "60px";
     boxes[currentEle].innerHTML = " ";
 }
 
