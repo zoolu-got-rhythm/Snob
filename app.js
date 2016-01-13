@@ -16,21 +16,28 @@
 function build(element, width, height) {
     //  element ? element = element : throw "insert an argument";
     var newElement = document.createElement(element);
-    document.body.appendChild(newElement);
-    newElement.style.width = width + "px";
-    newElement.style.height = height + "px";
+
+    // client-side
+    if(width && height){
+      newElement.style.width = width + "px";
+      newElement.style.height = height + "px";
+    }
+
     newElement.style.backgroundColor = '#ddd';
     newElement.style.borderRadius = "4px";
-
     newElement.style.margin = '5px';
     return newElement;
 }
 
 // create a hundred boxes
 var boxes = [];
-for (var i = 0; i < 15; i++) {
-    var ele = build("div", "60", "60");
 
+    var ul = build("ul");
+    document.body.appendChild(ul);
+
+for (var i = 0; i < 15; i++) {
+    var ele = build("li", 60, 60);
+    ul.appendChild(ele)
     boxes.push(ele)
     // boxes[i].addEventListener("mouseover", function(){ expand(ele, i) });
     boxes[i].onmouseover = expand.bind(this, (i));
