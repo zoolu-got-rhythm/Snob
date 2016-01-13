@@ -25,13 +25,10 @@ function build(element, width, height) {
 }
 
 // create a hundred boxes
-var artists = [{name: "Picasso", pic: "http://thesource.com/wp-content/uploads/2015/02/Pablo_Picasso1.jpg", work: {} }, "warhol", "bob", "jane"];
 var boxes = [];
 for (var i = 0; i < artists.length; i++) {
     var ele = build("div", "60", "60");
-    var img = getImage(artists[i].pic);
 
-    ele.appendChild(img)
     boxes.push(ele)
     // boxes[i].addEventListener("mouseover", function(){ expand(ele, i) });
     boxes[i].onmouseover = expand.bind(this, (i));
@@ -48,29 +45,18 @@ function expand(currentEle) {
     boxes[currentEle].style.cursor = "pointer";
 
     boxes[currentEle].innerHTML = "<h3>" + artists[currentEle] + "<h3>";
-    // boxes[currentEle].className = "expand";
+
     console.log(boxes[currentEle]);
-    // boxes[currentEle]
+
 }
 
 
 function detract(currentEle) {
     boxes[currentEle].style.width = "50px";
     boxes[currentEle].innerHTML = " ";
-
-    // boxes[currentEle].className = "detract";
 }
 
 function gallery(currentEle) {
     boxes[currentEle].style.width = window.innerWidth + "px";
     boxes[currentEle].innerHTML = "workkkkkkkkkk and more work";
-
-    // boxes[currentEle].className = "detract";
-}
-
-// image helper function
-function getImage(url){
-    var img = new Image(55, 55);
-    img.src = url;
-    return img;
 }
