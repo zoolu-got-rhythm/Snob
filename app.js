@@ -19,13 +19,14 @@ function build(element, width, height) {
 
     // client-side
     if(width && height){
-      newElement.style.width = width + "px";
-      newElement.style.height = height + "px";
+        newElement.style.width = width + "px";
+        newElement.style.height = height + "px";
+        newElement.style.backgroundColor = '#ddd';
+        newElement.style.borderRadius = "4px";
+        newElement.style.margin = '5px';
     }
 
-    newElement.style.backgroundColor = '#ddd';
-    newElement.style.borderRadius = "4px";
-    newElement.style.margin = '5px';
+
     return newElement;
 }
 
@@ -35,7 +36,7 @@ var boxes = [];
     var ul = build("ul");
     document.body.appendChild(ul);
 
-for (var i = 0; i < 15; i++) {
+for (var i = 0; i < 8; i++) {
     var ele = build("li", 60, 60);
     ul.appendChild(ele)
     boxes.push(ele)
