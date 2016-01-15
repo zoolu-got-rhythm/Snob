@@ -1,5 +1,5 @@
 
-// DOM helper function
+// DOM helper function: create a new node
 function build(element, width, height) {
     //  element ? element = element : throw "insert an argument";
     var newElement = document.createElement(element);
@@ -48,6 +48,8 @@ function detract(currentEle) {
 }
 
 function gallery(currentEle) {
+    var data = makeRequest("/route"); // makes an ajax request and returns data
+    // do something with data inside currentEle
     boxes[currentEle].style.width = window.innerWidth + "px";
     boxes[currentEle].innerHTML = "workkkkkkkkkk and more work";
 }
