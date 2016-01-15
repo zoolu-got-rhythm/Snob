@@ -15,6 +15,8 @@ function build(element, width, height) {
     return newElement;
 }
 
+
+
 // create a hundred boxes
 var boxes = [];
 
@@ -37,7 +39,7 @@ function expand(currentEle) {
     boxes[currentEle].style.width = "100px";
     boxes[currentEle].style.cursor = "pointer";
 
-    boxes[currentEle].innerHTML = currentEle;
+    boxes[currentEle].innerHTML = "GET request " + currentEle;
     console.log(boxes[currentEle]);
 }
 
@@ -48,8 +50,8 @@ function detract(currentEle) {
 }
 
 function gallery(currentEle) {
-    var data = makeRequest("/route"); // makes an ajax request and returns data
-    // do something with data inside currentEle
+    var data = makeRequest("/api/data"); // makes an ajax request and returns data
+    // do something with data inside currentEle, populate and manipulate.
     boxes[currentEle].style.width = window.innerWidth + "px";
     boxes[currentEle].innerHTML = "workkkkkkkkkk and more work";
 }
