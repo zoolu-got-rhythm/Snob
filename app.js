@@ -50,7 +50,8 @@ function detract(currentEle) {
 }
 
 function gallery(currentEle) {
-    var data = makeRequest("/api/data"); // makes an ajax request and returns data
+    // var data = makeRequest("/api/data");
+    // makes an ajax request and returns data
     // do something with data inside currentEle, populate and manipulate.
     boxes[currentEle].style.width = window.innerWidth + "px";
     boxes[currentEle].innerHTML = "workkkkkkkkkk and more work";
